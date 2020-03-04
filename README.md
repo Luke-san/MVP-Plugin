@@ -6,5 +6,5 @@ This is a simplistic remake of Joker's <a href="https://github.com/galaxy119/MVP
 
 <h3>Parameters</h3>
 
-MVP_Announcement - Changes the announcement for MVP at the end of the game must include {Kills} for number of kills and {MVP} for the name of the MVP of the round.
-MVP_NoKill_Announce - This is what is announced at the end of a match if nobody gets any kills.
++ MVP_Announcement - Changes the announcement for MVP at the end of the game must include {Kills} for number of kills and {MVP} for the name of the MVP of the round.
++ MVP_NoKill_Announce - This is what is announced at the end of a match if nobody gets any kills.
