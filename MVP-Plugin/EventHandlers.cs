@@ -27,9 +27,11 @@ namespace MVP
         public void OnRoundEnd()
         {
             ReferenceHub mvp = findMVP();
+            string message = $"{mvp.GetNickname()} was MVP of the match with {playerKillNumber[playersWithKills.IndexOf(mvp)].ToString()} kills!";
+            if (mvp.ToString() == "") { message = "Nobody got any kills."; }
             foreach (GameObject ply in PlayerManager.players)
             {
-                Player.GetPlayer(ply.name).Broadcast(10, $"{mvp.GetNickname()} was MVP of the match with {playerKillNumber[playersWithKills.IndexOf(mvp)].ToString()} kills!");
+                Player.GetPlayer(ply.name).Broadcast(10, message, false);
             }
             playersWithKills = new List<ReferenceHub>();
             playerKillNumber = new List<int>();
