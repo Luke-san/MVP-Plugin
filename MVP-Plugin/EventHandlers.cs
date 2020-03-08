@@ -33,7 +33,9 @@ namespace MVP
 
         public int FindMVP()
         {
-            int largestNumber = -1;
+            if (playersWithKills.Count == 0)
+                return (-1);
+            int largestNumber = 0;
             for (int i=0; i<playersWithKills.Count; i++)
             {
                 if (playerKillNumber[i] > playerKillNumber[largestNumber]) { largestNumber = i; }
