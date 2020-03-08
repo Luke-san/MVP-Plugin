@@ -65,8 +65,8 @@ namespace MVP
                 if (!message.Contains("{MVP}") || !message.Contains("{Kills}"))
                     return ($"{MVP} was MVP of the match with {Kills} kills!");
 
-                message.Replace("{MVP}", MVP);
-                message.Replace("{Kills}", Kills);
+                message = message.Replace("{MVP}", MVP);
+                message = message.Replace("{Kills}", Kills);
                 return (message);
             }
         }
