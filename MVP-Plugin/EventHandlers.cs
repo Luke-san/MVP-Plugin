@@ -11,12 +11,20 @@ namespace MVP
         public Plugin plugin;
         public EventHandlers(Plugin plugin) => this.plugin = plugin;
 
-        public List<ReferenceHub> playersWithKills = new List<ReferenceHub>();
+        public List<string> playersWithKills = new List<string>();
         public List<int> playerKillNumber = new List<int>();
 
         public void OnPlayerDeath(ref PlayerDeathEvent ev)
         {
-            ReferenceHub killer = Player.GetPlayer(ev.Killer.GetNickname());
+            var dmg = ev.Info.GetDamageType();
+            if (dmg == DamageTypes.Tesla || dmg == DamageTypes.Wall || dmg == DamageTypes.Contain || dmg == DamageTypes.Decont
+                || dmg == DamageTypes.Falldown || dmg == DamageTypes.Flying || dmg == DamageTypes.Nuke || dmg == DamageTypes.Pocket
+                || dmg == DamageTypes.RagdollLess || dmg == DamageTypes.Recontainment)
+                return;
+            if (ev.Player.GetTeam() == ev.Killer.GetTeam())
+                return;
+
+            string killer = ev.Killer.GetNickname();
             if (!playersWithKills.Contains(killer))
             {
                 playersWithKills.Add(killer);
@@ -29,7 +37,7 @@ namespace MVP
         {
             string message = GetEndMesage;
             Map.Broadcast(message, 10, false);
-            playersWithKills = new List<ReferenceHub>();
+            playersWithKills = new List<string>();
             playerKillNumber = new List<int>();
         }
 
@@ -56,11 +64,10 @@ namespace MVP
                     return (CustomConfigGet("MVP_NoKill_Announce", "Nobody got any kills!"));
                 }
 
-                ReferenceHub MVP_ent = playersWithKills[MVP_ind];
-                string MVP = MVP_ent.GetNickname();
+                string MVP = playersWithKills[MVP_ind];
                 //string message = EXILED.Plugin.Config.GetString("MVP_Announcement", "{MVP} was MVP of the match with {Kills} kills!");
                 string message = CustomConfigGet("MVP_Announcement", "{MVP} was MVP of the match with {Kills} kills!");
-                string Kills = playerKillNumber[playersWithKills.IndexOf(MVP_ent)].ToString();
+                string Kills = playerKillNumber[playersWithKills.IndexOf(MVP)].ToString();
                 
                 if (!message.Contains("{MVP}") || !message.Contains("{Kills}"))
                     return ($"{MVP} was MVP of the match with {Kills} kills!");
