@@ -48,19 +48,19 @@
     </Reference>
     <Reference Include="EXILED, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Exiled\EXILED\EXILED.dll</HintPath>
+      <HintPath>..\..\Exiled\References\EXILED.dll</HintPath>
     </Reference>
     <Reference Include="EXILED_Events, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Exiled\Plugins\EXILED_Events.dll</HintPath>
+      <HintPath>..\..\Exiled\References\EXILED_Events.dll</HintPath>
     </Reference>
     <Reference Include="EXILED_Idler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Exiled\Plugins\EXILED_Idler.dll</HintPath>
+      <HintPath>..\..\Exiled\References\EXILED_Idler.dll</HintPath>
     </Reference>
     <Reference Include="EXILED_Permissions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Exiled\Plugins\EXILED_Permissions.dll</HintPath>
+      <HintPath>..\..\Exiled\References\EXILED_Permissions.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
