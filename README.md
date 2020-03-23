@@ -4,7 +4,7 @@ Announces MVP at the end of match though how many kills they have.
 
 This is a simplistic remake of Joker's <a href="https://github.com/galaxy119/MVP">MVP plugin for Smod</a>, I just remade it into a more simplistic version for EXILED.
 
-Due to issues with having it work with the Exiled Config file, this will be in a custom config file in your AppData\Roaming\Plugins\MVP in a file called "MVP_Config.txt" (if this isn't there run the server once with the plugin and it will create it)
+Due to issues with having it work with the Exiled Config file, this will be in a custom config file in your AppData\Roaming\Plugins\MVP in a file called "MVP_Config.txt" (if this isn't there run the server once with the plugin and it will create it) Also despite being coded with windows in mind it also works with linux.
 
 <h3>Parameters</h3>
 
