@@ -17,7 +17,7 @@ namespace MVP
 			if (!Directory.Exists(path)) { Directory.CreateDirectory(path); }
 			if (!File.Exists(ConfigFile)) { 
 				File.Create(ConfigFile).Close();
-				File.WriteAllText(ConfigFile, "MVP_NoKill_Announce:Nobody got any kills!\nMVP_Announcement:{MVP} was MVP of the match with {Kills} kills!");
+				File.WriteAllText(ConfigFile, "MVP_NoKill_Announce:Nobody got any kills!\nMVP_Announcement:{MVP} was MVP of the match with {Kills} kills!\nAnnouncement_Duration:10");
 			}
 			
 			EventHandlers = new EventHandlers(this);
@@ -34,6 +34,6 @@ namespace MVP
 			throw new NotImplementedException();
 		}
 
-		public override string getName { get; } = "MVP by Luke-san";
+		public override string getName { get; } = "MVP v1.6 by Luke-san";
 	}
 }
