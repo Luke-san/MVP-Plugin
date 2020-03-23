@@ -10,3 +10,4 @@ Due to issues with having it work with the Exiled Config file, this will be in a
 
 + MVP_Announcement - Changes the announcement for MVP at the end of the game must include {Kills} for number of kills and {MVP} for the name of the MVP of the round.
 + MVP_NoKill_Announce - This is what is announced at the end of a match if nobody gets any kills.
++ Announcement_Duration - Adjusts how long the MVP announcement at the end of the round is (in seconds).
