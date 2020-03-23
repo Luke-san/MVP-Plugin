@@ -23,7 +23,7 @@ namespace MVP
                 return;
             if (ev.Player.GetTeam() == ev.Killer.GetTeam())
                 return;
-
+            
             string killer = ev.Killer.GetNickname();
             if (!playersWithKills.Contains(killer))
             {
@@ -36,7 +36,16 @@ namespace MVP
         public void OnRoundEnd()
         {
             string message = GetEndMesage;
-            Map.Broadcast(message, 10, false);
+            UInt32 duration = 10;
+            try
+            {
+                duration = UInt32.Parse(CustomConfigGet("Announcement_Duration", "10"));
+            }
+            catch (FormatException)
+            {
+                duration = 10;
+            }
+            Map.Broadcast(duration.ToString(), duration, false);
             playersWithKills = new List<string>();
             playerKillNumber = new List<int>();
         }
